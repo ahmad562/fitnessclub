@@ -9,7 +9,7 @@ export default function BMICalculator() {
   const [category, setCategory] = useState('');
 
   const calculateBMI = () => {
-    const h = parseFloat(height) / 100; // cm to m
+    const h = parseFloat(height) / 100;
     const w = parseFloat(weight);
     if (h && w) {
       const bmiValue = w / (h * h);
@@ -22,40 +22,40 @@ export default function BMICalculator() {
   };
 
   return (
-    <section className="py-20 bg-gray-100">
+    <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">BMI Calculator</h2>
-        <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Height (cm)</label>
+        <h2 className="text-5xl font-bold text-center mb-16">BMI Calculator</h2>
+        <div className="max-w-md mx-auto bg-gray-800 p-8 rounded-xl shadow-2xl">
+          <div className="mb-6">
+            <label className="block text-gray-300 mb-2 font-semibold">Height (cm)</label>
             <input
               type="number"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
-              className="w-full px-3 py-2 border rounded"
+              className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-secondary focus:outline-none"
               placeholder="170"
             />
           </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 mb-2">Weight (kg)</label>
+          <div className="mb-6">
+            <label className="block text-gray-300 mb-2 font-semibold">Weight (kg)</label>
             <input
               type="number"
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
-              className="w-full px-3 py-2 border rounded"
+              className="w-full px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-secondary focus:outline-none"
               placeholder="70"
             />
           </div>
           <button
             onClick={calculateBMI}
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+            className="w-full bg-secondary text-white py-3 rounded-lg font-bold hover:bg-red-700 transition-colors transform hover:scale-105"
           >
             Calculate BMI
           </button>
           {bmi && (
-            <div className="mt-4 text-center">
-              <p className="text-lg">Your BMI: {bmi.toFixed(2)}</p>
-              <p className="text-gray-600">{category}</p>
+            <div className="mt-6 text-center">
+              <p className="text-3xl font-bold text-secondary mb-2">{bmi.toFixed(2)}</p>
+              <p className="text-xl text-gray-300">{category}</p>
             </div>
           )}
         </div>
