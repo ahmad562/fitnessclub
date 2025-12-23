@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Transformations from '@/components/Transformations';
 import Services from '@/components/Services';
+import Testimonials from '@/components/Testimonials';
 import Schedule from '@/components/Schedule';
 import BMICalculator from '@/components/BMICalculator';
 import Blog from '@/components/Blog';
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <Transformations />
       <Services />
+      <Testimonials />
       <Schedule />
       <BMICalculator />
       <Blog />
