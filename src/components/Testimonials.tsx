@@ -1,3 +1,5 @@
+/* eslint-enable react/no-unescaped-entities */
+
 export default function Testimonials() {
   const testimonials = [
     {
