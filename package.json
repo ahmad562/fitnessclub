@@ -22,5 +22,9 @@
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "scripts": {
+  "lint": "eslint . --ext .ts,.tsx",
+  "lint:fix": "eslint . --ext .ts,.tsx --fix"
+}
 }
