@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Use Node.js 18
         uses: actions/setup-node@v3
@@ -22,8 +23,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      # 🔑 This step CREATES the .next directory
+      - name: Build Next.js app
         run: npm run build
+
+      - name: Verify build output
+        run: |
+          if [ ! -d ".next" ]; then
+            echo ".next directory missing – build failed"
+            exit 1
+          fi
 
       - name: Run tests
         run: npm test
